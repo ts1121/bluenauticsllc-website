@@ -1,31 +1,23 @@
 /* ==========================================
    BlueNautics LLC — Premium Minimal Corporate
-   Single-page, GitHub Pages ready
    ========================================== */
 
 :root{
   --bg: #070b14;
   --bg2: #0b1220;
   --card: rgba(255,255,255,0.06);
-  --card2: rgba(255,255,255,0.08);
   --text: rgba(255,255,255,0.92);
   --muted: rgba(255,255,255,0.70);
-  --faint: rgba(255,255,255,0.55);
   --border: rgba(255,255,255,0.12);
 
-  --white: #ffffff;
-
   --accent: #4cc9f0;
-  --accent2: #4895ef;
   --accent3: #4361ee;
 
   --shadow: 0 10px 30px rgba(0,0,0,0.40);
-
   --radius-lg: 18px;
   --radius-md: 14px;
 
   --container: 1140px;
-
   --header-h: 74px;
 
   --ease: cubic-bezier(.2,.8,.2,1);
@@ -44,10 +36,7 @@ body{
   line-height: 1.55;
 }
 
-a{
-  color: inherit;
-  text-decoration: none;
-}
+a{ color: inherit; text-decoration: none; }
 a:hover{ opacity: 0.92; }
 
 code{
@@ -147,25 +136,6 @@ code{
   border: 1px solid rgba(255,255,255,0.10);
 }
 
-.header-cta{
-  display: inline-flex;
-  align-items: center;
-  justify-content: center;
-  height: 42px;
-  padding: 0 14px;
-  border-radius: 12px;
-  background: linear-gradient(135deg, rgba(76, 201, 240, 0.22), rgba(67, 97, 238, 0.18));
-  border: 1px solid rgba(255,255,255,0.14);
-  font-weight: 600;
-  color: rgba(255,255,255,0.92);
-  box-shadow: 0 10px 24px rgba(0,0,0,0.28);
-  transition: transform 160ms var(--ease), background 160ms var(--ease);
-}
-
-.header-cta:hover{
-  transform: translateY(-1px);
-}
-
 /* Mobile nav */
 .nav-toggle{
   display: none;
@@ -213,16 +183,25 @@ code{
   padding-top: 18px;
 }
 
-.hero-badge{
+.hero-title{
+  margin: 0;
+  font-size: clamp(2.2rem, 3.4vw, 3.3rem);
+  letter-spacing: -0.035em;
+  line-height: 1.05;
+}
+
+/* NEW: subline under title */
+.hero-subline{
   display: inline-flex;
   align-items: center;
   gap: 10px;
-  padding: 10px 12px;
+  margin-top: 12px;
+  padding: 9px 12px;
   border-radius: 999px;
   background: rgba(255,255,255,0.06);
   border: 1px solid rgba(255,255,255,0.12);
   color: rgba(255,255,255,0.82);
-  font-weight: 500;
+  font-weight: 600;
   font-size: 0.95rem;
 }
 
@@ -234,15 +213,8 @@ code{
   box-shadow: 0 0 0 4px rgba(76,201,240,0.16);
 }
 
-.hero-title{
-  margin: 16px 0 10px;
-  font-size: clamp(2.2rem, 3.4vw, 3.3rem);
-  letter-spacing: -0.035em;
-  line-height: 1.05;
-}
-
 .hero-subtitle{
-  margin: 0;
+  margin: 14px 0 0;
   color: rgba(255,255,255,0.78);
   font-size: 1.05rem;
   max-width: 54ch;
@@ -292,31 +264,6 @@ code{
   background: rgba(255,255,255,0.05);
 }
 
-.hero-metrics{
-  display: grid;
-  grid-template-columns: repeat(3, minmax(0, 1fr));
-  gap: 12px;
-  margin-top: 20px;
-}
-
-.metric{
-  padding: 14px;
-  border-radius: var(--radius-md);
-  background: rgba(255,255,255,0.05);
-  border: 1px solid rgba(255,255,255,0.10);
-}
-
-.metric-title{
-  font-weight: 700;
-  letter-spacing: -0.02em;
-}
-
-.metric-desc{
-  margin-top: 4px;
-  color: rgba(255,255,255,0.72);
-  font-size: 0.92rem;
-}
-
 .hero-card{
   border-radius: var(--radius-lg);
   background: linear-gradient(180deg, rgba(255,255,255,0.08), rgba(255,255,255,0.05));
@@ -325,6 +272,7 @@ code{
   overflow: hidden;
 }
 
+/* logo-only hero card top */
 .hero-card-top{
   padding: 26px 22px 18px;
   display: flex;
@@ -333,43 +281,15 @@ code{
     radial-gradient(600px 280px at 50% 0%, rgba(76, 201, 240, 0.20), rgba(0,0,0,0));
 }
 
+.hero-card-top-only{
+  padding: 34px 22px 34px;
+}
+
 .hero-logo{
-  width: min(260px, 70%);
+  width: min(300px, 78%);
   height: auto;
   object-fit: contain;
   filter: drop-shadow(0 18px 40px rgba(0,0,0,0.55));
-}
-
-.hero-card-bottom{
-  padding: 18px 22px 22px;
-}
-
-.hero-card-title{
-  font-weight: 700;
-  font-size: 1.1rem;
-  letter-spacing: -0.02em;
-}
-
-.hero-card-text{
-  margin: 8px 0 0;
-  color: rgba(255,255,255,0.74);
-}
-
-.hero-card-chips{
-  display: flex;
-  gap: 10px;
-  flex-wrap: wrap;
-  margin-top: 16px;
-}
-
-.chip{
-  padding: 8px 10px;
-  border-radius: 999px;
-  background: rgba(255,255,255,0.06);
-  border: 1px solid rgba(255,255,255,0.10);
-  color: rgba(255,255,255,0.80);
-  font-weight: 600;
-  font-size: 0.90rem;
 }
 
 .hero-fade{
@@ -383,9 +303,7 @@ code{
 }
 
 /* Sections */
-.section{
-  padding: 70px 0;
-}
+.section{ padding: 70px 0; }
 
 .section-alt{
   background: rgba(255,255,255,0.02);
@@ -436,9 +354,7 @@ code{
   gap: 14px;
 }
 
-.about-grid .card{
-  padding: 18px;
-}
+.about-grid .card{ padding: 18px; }
 
 /* Verticals */
 .verticals-grid{
@@ -447,9 +363,7 @@ code{
   gap: 14px;
 }
 
-.vertical{
-  padding: 18px;
-}
+.vertical{ padding: 18px; }
 
 .vertical-top{
   display: flex;
@@ -490,9 +404,7 @@ code{
 }
 
 /* Timeline */
-.timeline{
-  padding: 18px;
-}
+.timeline{ padding: 18px; }
 
 .timeline-item{
   display: grid;
@@ -591,10 +503,6 @@ code{
   font-weight: 700;
 }
 
-.arrow{
-  opacity: 0.9;
-}
-
 /* Contact */
 .contact-grid{
   display: grid;
@@ -602,9 +510,7 @@ code{
   gap: 14px;
 }
 
-.contact-grid .card{
-  padding: 18px;
-}
+.contact-grid .card{ padding: 18px; }
 
 .contact-grid a{
   text-decoration: underline;
@@ -706,46 +612,27 @@ code{
 
 /* Responsive */
 @media (max-width: 980px){
-  .hero-inner{
-    grid-template-columns: 1fr;
-  }
-  .hero-right{
-    order: -1;
-  }
-  .hero-metrics{
-    grid-template-columns: 1fr;
-  }
-  .about-grid{
-    grid-template-columns: 1fr;
-  }
-  .verticals-grid{
-    grid-template-columns: 1fr;
-  }
-  .clients-grid{
-    grid-template-columns: repeat(3, minmax(0, 1fr));
-  }
-  .profiles-grid{
-    grid-template-columns: 1fr;
-  }
-  .contact-grid{
-    grid-template-columns: 1fr;
-  }
+  .hero-inner{ grid-template-columns: 1fr; }
+  .hero-right{ order: -1; }
+
+  .about-grid{ grid-template-columns: 1fr; }
+  .verticals-grid{ grid-template-columns: 1fr; }
+  .clients-grid{ grid-template-columns: repeat(3, minmax(0, 1fr)); }
+  .profiles-grid{ grid-template-columns: 1fr; }
+  .contact-grid{ grid-template-columns: 1fr; }
+
   .footer-inner{
     flex-direction: column;
     align-items: flex-start;
   }
-  .footer-right{
-    justify-content: flex-start;
-  }
+  .footer-right{ justify-content: flex-start; }
 
   .nav-toggle{
     display: inline-flex;
     align-items: center;
     justify-content: center;
   }
-  .header-cta{
-    display: none;
-  }
+
   .nav-menu{
     position: absolute;
     right: 20px;
@@ -761,10 +648,12 @@ code{
     min-width: 220px;
   }
   .nav-menu.open{ display: flex; }
+
   .nav-link{
     width: 100%;
     padding: 10px 12px;
   }
+
   .nav{
     position: relative;
     margin-left: auto;
@@ -772,10 +661,6 @@ code{
 }
 
 @media (max-width: 520px){
-  .brand-name{
-    display: none;
-  }
-  .brand{
-    min-width: unset;
-  }
+  .brand-name{ display: none; }
+  .brand{ min-width: unset; }
 }
