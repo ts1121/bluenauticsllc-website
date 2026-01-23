@@ -9,17 +9,14 @@
 
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <!-- Premium/minimal corporate font -->
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
 
   <link rel="stylesheet" href="styles.css" />
 </head>
 
 <body>
-  <!-- Top progress bar (subtle polish) -->
   <div class="scroll-progress" aria-hidden="true"></div>
 
-  <!-- Header / Nav -->
   <header class="site-header" id="top">
     <div class="container header-inner">
       <a class="brand" href="#top" aria-label="BlueNautics Home">
@@ -41,22 +38,22 @@
           <li><a class="nav-link" href="#contact">Contact</a></li>
         </ul>
       </nav>
-
-      <a class="header-cta" href="#contact">Talk to us</a>
+      <!-- removed: Talk to us button -->
     </div>
   </header>
 
-  <!-- Hero -->
   <main>
     <section class="hero" aria-label="Hero">
       <div class="container hero-inner">
         <div class="hero-left">
-          <div class="hero-badge">
+          <h1 class="hero-title">BlueNautics LLC</h1>
+
+          <!-- moved under title -->
+          <div class="hero-subline">
             <span class="dot" aria-hidden="true"></span>
-            Sourcing & Business Development • North America ↔ Bangladesh
+            <span>Sourcing &amp; Business Development</span>
           </div>
 
-          <h1 class="hero-title">BlueNautics LLC</h1>
           <p class="hero-subtitle">
             Premium, reliable sourcing and business development across
             <strong>apparel</strong>, <strong>jute products</strong>, and <strong>IT/software</strong>.
@@ -69,39 +66,15 @@
             <a class="btn btn-ghost" href="#contact">Contact</a>
           </div>
 
-          <div class="hero-metrics" role="list" aria-label="Key highlights">
-            <div class="metric" role="listitem">
-              <div class="metric-title">3 Verticals</div>
-              <div class="metric-desc">Apparel • Jute • IT/Software</div>
-            </div>
-            <div class="metric" role="listitem">
-              <div class="metric-title">Partners</div>
-              <div class="metric-desc">Garments Maker BD • Antopolis</div>
-            </div>
-            <div class="metric" role="listitem">
-              <div class="metric-title">Operating Model</div>
-              <div class="metric-desc">Transparent • End-to-end</div>
-            </div>
-          </div>
+          <!-- removed: hero metrics row -->
         </div>
 
         <div class="hero-right" aria-label="Brand card">
           <div class="hero-card">
-            <div class="hero-card-top">
+            <div class="hero-card-top hero-card-top-only">
               <img class="hero-logo" src="assets/img/logo.png" alt="BlueNautics logo large" />
             </div>
-            <div class="hero-card-bottom">
-              <div class="hero-card-title">Sourcing that feels effortless.</div>
-              <p class="hero-card-text">
-                From materials and sampling to production, QA, and delivery —
-                we keep you informed at every step.
-              </p>
-              <div class="hero-card-chips">
-                <span class="chip">Apparel</span>
-                <span class="chip">Jute</span>
-                <span class="chip">Software</span>
-              </div>
-            </div>
+            <!-- removed: hero-card-bottom content -->
           </div>
         </div>
       </div>
@@ -109,7 +82,6 @@
       <div class="hero-fade" aria-hidden="true"></div>
     </section>
 
-    <!-- About -->
     <section class="section" id="about">
       <div class="container">
         <div class="section-head">
@@ -148,7 +120,6 @@
       </div>
     </section>
 
-    <!-- Verticals -->
     <section class="section section-alt" id="verticals">
       <div class="container">
         <div class="section-head">
@@ -204,7 +175,6 @@
       </div>
     </section>
 
-    <!-- Process -->
     <section class="section" id="process">
       <div class="container">
         <div class="section-head">
@@ -264,7 +234,6 @@
       </div>
     </section>
 
-    <!-- Past clients -->
     <section class="section section-alt" id="clients">
       <div class="container">
         <div class="section-head">
@@ -275,30 +244,16 @@
         </div>
 
         <div class="clients-grid card">
-          <!-- Replace these placeholders with <img> tags when you have client logos -->
-          <div class="client-tile">
-            <div class="client-placeholder">Client Logo</div>
-          </div>
-          <div class="client-tile">
-            <div class="client-placeholder">Client Logo</div>
-          </div>
-          <div class="client-tile">
-            <div class="client-placeholder">Client Logo</div>
-          </div>
-          <div class="client-tile">
-            <div class="client-placeholder">Client Logo</div>
-          </div>
-          <div class="client-tile">
-            <div class="client-placeholder">Client Logo</div>
-          </div>
-          <div class="client-tile">
-            <div class="client-placeholder">Client Logo</div>
-          </div>
+          <div class="client-tile"><div class="client-placeholder">Client Logo</div></div>
+          <div class="client-tile"><div class="client-placeholder">Client Logo</div></div>
+          <div class="client-tile"><div class="client-placeholder">Client Logo</div></div>
+          <div class="client-tile"><div class="client-placeholder">Client Logo</div></div>
+          <div class="client-tile"><div class="client-placeholder">Client Logo</div></div>
+          <div class="client-tile"><div class="client-placeholder">Client Logo</div></div>
         </div>
       </div>
     </section>
 
-    <!-- Business profiles -->
     <section class="section" id="profiles">
       <div class="container">
         <div class="section-head">
@@ -354,7 +309,6 @@
       </div>
     </section>
 
-    <!-- Contact -->
     <section class="section section-alt" id="contact">
       <div class="container">
         <div class="section-head">
@@ -412,7 +366,6 @@
       </div>
     </section>
 
-    <!-- Footer -->
     <footer class="footer" aria-label="Footer">
       <div class="container footer-inner">
         <div class="footer-left">
@@ -420,7 +373,7 @@
             <img src="assets/img/logo.png" alt="BlueNautics logo" class="footer-logo" />
             <div>
               <div class="footer-name">BlueNautics LLC</div>
-              <div class="footer-tagline">Sourcing & Business Development • North America ↔ Bangladesh</div>
+              <div class="footer-tagline">Sourcing & Business Development</div>
             </div>
           </div>
         </div>
