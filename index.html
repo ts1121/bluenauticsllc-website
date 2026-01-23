@@ -1,87 +1,443 @@
-<!doctype html>
+<!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="utf-8" />
-  <meta name="viewport" content="width=device-width,initial-scale=1" />
-  <meta name="description" content="BlueNautics LLC connects North America to Bangladesh across Apparel, Jute, and IT/Software solutions." />
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>BlueNautics LLC</title>
+  <meta name="description" content="BlueNautics LLC — sourcing and business development across apparel, jute products, and IT/software. Connecting North America to Bangladesh." />
+  <meta name="theme-color" content="#0b1220" />
 
-  <link rel="icon" href="assets/img/logo.png" />
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <!-- Premium/minimal corporate font -->
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+
   <link rel="stylesheet" href="styles.css" />
 </head>
 
 <body>
-  <!-- Header -->
+  <!-- Top progress bar (subtle polish) -->
+  <div class="scroll-progress" aria-hidden="true"></div>
+
+  <!-- Header / Nav -->
   <header class="site-header" id="top">
     <div class="container header-inner">
-      <a class="brand" href="#home" aria-label="Go to Home">
-        <img class="brand-logo" src="assets/img/logo.png" alt="BlueNautics LLC logo" />
-        <span class="brand-text">
-          <span class="brand-name">BlueNautics</span>
-          <span class="brand-legal">LLC</span>
-        </span>
+      <a class="brand" href="#top" aria-label="BlueNautics Home">
+        <img class="brand-logo" src="assets/img/logo.png" alt="BlueNautics logo" />
+        <span class="brand-name">BlueNautics</span>
       </a>
 
-      <button class="nav-toggle" id="navToggle" aria-label="Toggle navigation" aria-expanded="false">
-        <span></span><span></span><span></span>
-      </button>
+      <nav class="nav" aria-label="Primary">
+        <button class="nav-toggle" id="navToggle" aria-label="Open menu" aria-expanded="false" aria-controls="navMenu">
+          <span class="nav-toggle-lines" aria-hidden="true"></span>
+        </button>
 
-      <nav class="nav" id="navMenu" aria-label="Primary navigation">
-        <a class="nav-link" href="#home">Home</a>
-        <a class="nav-link" href="#about">About</a>
-        <a class="nav-link" href="#services">Services</a>
-        <a class="nav-link" href="#business-profile">Business Profile</a>
-        <a class="nav-link nav-link--cta" href="#contact">Contact</a>
+        <ul class="nav-menu" id="navMenu">
+          <li><a class="nav-link" href="#about">About</a></li>
+          <li><a class="nav-link" href="#verticals">Verticals</a></li>
+          <li><a class="nav-link" href="#process">Process</a></li>
+          <li><a class="nav-link" href="#clients">Past Clients</a></li>
+          <li><a class="nav-link" href="#profiles">Business Profile</a></li>
+          <li><a class="nav-link" href="#contact">Contact</a></li>
+        </ul>
       </nav>
+
+      <a class="header-cta" href="#contact">Talk to us</a>
     </div>
   </header>
 
-  <!-- Page sections (placeholders for now) -->
+  <!-- Hero -->
   <main>
-    <section class="section" id="home">
+    <section class="hero" aria-label="Hero">
+      <div class="container hero-inner">
+        <div class="hero-left">
+          <div class="hero-badge">
+            <span class="dot" aria-hidden="true"></span>
+            Sourcing & Business Development • North America ↔ Bangladesh
+          </div>
+
+          <h1 class="hero-title">BlueNautics LLC</h1>
+          <p class="hero-subtitle">
+            Premium, reliable sourcing and business development across
+            <strong>apparel</strong>, <strong>jute products</strong>, and <strong>IT/software</strong>.
+            Built for clear communication, strong execution, and long-term partnerships.
+          </p>
+
+          <div class="hero-actions">
+            <a class="btn btn-primary" href="#verticals">Explore verticals</a>
+            <a class="btn btn-secondary" href="#profiles">Download profiles</a>
+            <a class="btn btn-ghost" href="#contact">Contact</a>
+          </div>
+
+          <div class="hero-metrics" role="list" aria-label="Key highlights">
+            <div class="metric" role="listitem">
+              <div class="metric-title">3 Verticals</div>
+              <div class="metric-desc">Apparel • Jute • IT/Software</div>
+            </div>
+            <div class="metric" role="listitem">
+              <div class="metric-title">Partners</div>
+              <div class="metric-desc">Garments Maker BD • Antopolis</div>
+            </div>
+            <div class="metric" role="listitem">
+              <div class="metric-title">Operating Model</div>
+              <div class="metric-desc">Transparent • End-to-end</div>
+            </div>
+          </div>
+        </div>
+
+        <div class="hero-right" aria-label="Brand card">
+          <div class="hero-card">
+            <div class="hero-card-top">
+              <img class="hero-logo" src="assets/img/logo.png" alt="BlueNautics logo large" />
+            </div>
+            <div class="hero-card-bottom">
+              <div class="hero-card-title">Sourcing that feels effortless.</div>
+              <p class="hero-card-text">
+                From materials and sampling to production, QA, and delivery —
+                we keep you informed at every step.
+              </p>
+              <div class="hero-card-chips">
+                <span class="chip">Apparel</span>
+                <span class="chip">Jute</span>
+                <span class="chip">Software</span>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="hero-fade" aria-hidden="true"></div>
+    </section>
+
+    <!-- About -->
+    <section class="section" id="about">
       <div class="container">
-        <h1>Home</h1>
-        <p class="muted">Placeholder section — we’ll build the hero next.</p>
-        <div class="spacer"></div>
+        <div class="section-head">
+          <h2 class="section-title">About</h2>
+          <p class="section-subtitle">
+            Add your company description here (you said you’ll write this).
+            This area is designed to look premium even with short content.
+          </p>
+        </div>
+
+        <div class="about-grid">
+          <div class="card">
+            <h3 class="card-title">What we do</h3>
+            <p class="card-text">
+              We connect buyers and partners in North America to trusted production and delivery capabilities in Bangladesh,
+              with a focus on quality, transparency, and strong communication.
+            </p>
+          </div>
+
+          <div class="card">
+            <h3 class="card-title">How we work</h3>
+            <p class="card-text">
+              Structured execution, milestone-based progress updates, and rapid responsiveness —
+              so you always know where things stand.
+            </p>
+          </div>
+
+          <div class="card">
+            <h3 class="card-title">Why BlueNautics</h3>
+            <p class="card-text">
+              A single partner that can support sourcing + business development across three verticals,
+              while maintaining premium standards and accountability.
+            </p>
+          </div>
+        </div>
       </div>
     </section>
 
-    <section class="section section-alt" id="about">
+    <!-- Verticals -->
+    <section class="section section-alt" id="verticals">
       <div class="container">
-        <h2>About</h2>
-        <p class="muted">Placeholder section.</p>
-        <div class="spacer"></div>
+        <div class="section-head">
+          <h2 class="section-title">Verticals</h2>
+          <p class="section-subtitle">
+            Three focused service lines — each with specialized partners and execution.
+          </p>
+        </div>
+
+        <div class="verticals-grid">
+          <article class="vertical card">
+            <div class="vertical-top">
+              <div class="icon-badge" aria-hidden="true">A</div>
+              <h3 class="card-title">Garments / Apparel</h3>
+            </div>
+            <p class="card-text">
+              Sourcing and production support for ready-made garments and apparel.
+              Sampling, costing, production planning, and QA — with reliable on-ground execution.
+            </p>
+            <div class="card-meta">
+              <span class="pill">Partner: Garments Maker BD</span>
+            </div>
+          </article>
+
+          <article class="vertical card">
+            <div class="vertical-top">
+              <div class="icon-badge" aria-hidden="true">J</div>
+              <h3 class="card-title">Jute Products</h3>
+            </div>
+            <p class="card-text">
+              Sustainable jute products for retail and industrial needs.
+              We coordinate sourcing, product development, QC, packaging, and delivery workflows.
+            </p>
+            <div class="card-meta">
+              <span class="pill">Bangladesh-based supply network</span>
+            </div>
+          </article>
+
+          <article class="vertical card">
+            <div class="vertical-top">
+              <div class="icon-badge" aria-hidden="true">I</div>
+              <h3 class="card-title">Software / IT</h3>
+            </div>
+            <p class="card-text">
+              Software and IT delivery through trusted implementation partners.
+              Build, ship, and support — from MVPs to production systems.
+            </p>
+            <div class="card-meta">
+              <span class="pill">Partner: Antopolis</span>
+            </div>
+          </article>
+        </div>
       </div>
     </section>
 
-    <section class="section" id="services">
+    <!-- Process -->
+    <section class="section" id="process">
       <div class="container">
-        <h2>Services</h2>
-        <p class="muted">Placeholder section.</p>
-        <div class="spacer"></div>
+        <div class="section-head">
+          <h2 class="section-title">Process</h2>
+          <p class="section-subtitle">
+            End-to-end execution, with prompt communication across every stage.
+          </p>
+        </div>
+
+        <div class="timeline card">
+          <div class="timeline-item">
+            <div class="timeline-dot" aria-hidden="true"></div>
+            <div class="timeline-content">
+              <h3 class="timeline-title">Raw materials</h3>
+              <p class="timeline-text">
+                Identify suitable suppliers and materials aligned with your requirements, budget, and quality targets.
+              </p>
+            </div>
+          </div>
+
+          <div class="timeline-item">
+            <div class="timeline-dot" aria-hidden="true"></div>
+            <div class="timeline-content">
+              <h3 class="timeline-title">Costing • Sampling • Prototype development</h3>
+              <p class="timeline-text">
+                Cost breakdowns, sample iterations, and prototype refinement — with clear approvals and fast feedback cycles.
+              </p>
+            </div>
+          </div>
+
+          <div class="timeline-item">
+            <div class="timeline-dot" aria-hidden="true"></div>
+            <div class="timeline-content">
+              <h3 class="timeline-title">Production + Quality Assurance</h3>
+              <p class="timeline-text">
+                Manufacturing coordination and QA checkpoints to ensure consistency, compliance, and on-time progress.
+              </p>
+            </div>
+          </div>
+
+          <div class="timeline-item">
+            <div class="timeline-dot" aria-hidden="true"></div>
+            <div class="timeline-content">
+              <h3 class="timeline-title">Final product delivery</h3>
+              <p class="timeline-text">
+                Packaging, logistics coordination, and delivery completion — with status updates throughout.
+              </p>
+            </div>
+          </div>
+
+          <div class="timeline-footer">
+            <span class="pill">Prompt communication throughout the chain</span>
+            <span class="pill">Milestone-based updates</span>
+            <span class="pill">Quality-first execution</span>
+          </div>
+        </div>
       </div>
     </section>
 
-    <section class="section section-alt" id="business-profile">
+    <!-- Past clients -->
+    <section class="section section-alt" id="clients">
       <div class="container">
-        <h2>Business Profile</h2>
-        <p class="muted">Placeholder section.</p>
-        <div class="spacer"></div>
+        <div class="section-head">
+          <h2 class="section-title">Past Clients</h2>
+          <p class="section-subtitle">
+            Add your client logos to <code>assets/img/</code> and replace the placeholders below.
+          </p>
+        </div>
+
+        <div class="clients-grid card">
+          <!-- Replace these placeholders with <img> tags when you have client logos -->
+          <div class="client-tile">
+            <div class="client-placeholder">Client Logo</div>
+          </div>
+          <div class="client-tile">
+            <div class="client-placeholder">Client Logo</div>
+          </div>
+          <div class="client-tile">
+            <div class="client-placeholder">Client Logo</div>
+          </div>
+          <div class="client-tile">
+            <div class="client-placeholder">Client Logo</div>
+          </div>
+          <div class="client-tile">
+            <div class="client-placeholder">Client Logo</div>
+          </div>
+          <div class="client-tile">
+            <div class="client-placeholder">Client Logo</div>
+          </div>
+        </div>
       </div>
     </section>
 
-    <section class="section" id="contact">
+    <!-- Business profiles -->
+    <section class="section" id="profiles">
       <div class="container">
-        <h2>Contact</h2>
-        <p class="muted">Placeholder section.</p>
-        <div class="spacer"></div>
+        <div class="section-head">
+          <h2 class="section-title">Business Profile</h2>
+          <p class="section-subtitle">
+            Download company profiles for BlueNautics and partners.
+          </p>
+        </div>
+
+        <div class="profiles-grid">
+          <a class="profile-card card" href="assets/doc/BlueNautics-Company-Profile.pdf" target="_blank" rel="noopener">
+            <div class="profile-top">
+              <div class="icon-badge" aria-hidden="true">B</div>
+              <div>
+                <h3 class="card-title">BlueNautics LLC</h3>
+                <p class="card-text">Company profile & capabilities</p>
+              </div>
+            </div>
+            <div class="profile-action">
+              <span>Download PDF</span>
+              <span class="arrow" aria-hidden="true">→</span>
+            </div>
+          </a>
+
+          <a class="profile-card card" href="assets/doc/GarmentsMakerBD-Company-Profile.pdf" target="_blank" rel="noopener">
+            <div class="profile-top">
+              <div class="icon-badge" aria-hidden="true">G</div>
+              <div>
+                <h3 class="card-title">Garments Maker BD</h3>
+                <p class="card-text">Apparel manufacturing partner</p>
+              </div>
+            </div>
+            <div class="profile-action">
+              <span>Download PDF</span>
+              <span class="arrow" aria-hidden="true">→</span>
+            </div>
+          </a>
+
+          <a class="profile-card card" href="assets/doc/Antopolis-Company-Profile.pdf" target="_blank" rel="noopener">
+            <div class="profile-top">
+              <div class="icon-badge" aria-hidden="true">A</div>
+              <div>
+                <h3 class="card-title">Antopolis</h3>
+                <p class="card-text">Software / IT partner</p>
+              </div>
+            </div>
+            <div class="profile-action">
+              <span>Download PDF</span>
+              <span class="arrow" aria-hidden="true">→</span>
+            </div>
+          </a>
+        </div>
       </div>
     </section>
 
-    <footer class="footer">
+    <!-- Contact -->
+    <section class="section section-alt" id="contact">
+      <div class="container">
+        <div class="section-head">
+          <h2 class="section-title">Contact</h2>
+          <p class="section-subtitle">
+            Add your real emails/phones/addresses here. The layout supports offices + partner contacts cleanly.
+          </p>
+        </div>
+
+        <div class="contact-grid">
+          <div class="card">
+            <h3 class="card-title">USA Office</h3>
+            <p class="card-text">
+              <strong>Email:</strong> <a href="mailto:info@bluenautics.net">info@bluenautics.net</a><br/>
+              <strong>Phone:</strong> <a href="tel:+1XXXXXXXXXX">+1 (XXX) XXX-XXXX</a><br/>
+              <strong>Location:</strong> (Add city/state)
+            </p>
+          </div>
+
+          <div class="card">
+            <h3 class="card-title">Canada Office</h3>
+            <p class="card-text">
+              <strong>Email:</strong> <a href="mailto:canada@bluenautics.net">canada@bluenautics.net</a><br/>
+              <strong>Phone:</strong> <a href="tel:+1XXXXXXXXXX">+1 (XXX) XXX-XXXX</a><br/>
+              <strong>Location:</strong> (Add city/province)
+            </p>
+          </div>
+
+          <div class="card">
+            <h3 class="card-title">Bangladesh Partners (On the ground)</h3>
+            <p class="card-text">
+              <strong>Apparel / Garments / Jute:</strong> Garments Maker BD<br/>
+              <strong>IT / Software:</strong> Antopolis<br/>
+              <strong>Jute:</strong> (Add partner/contact name)
+            </p>
+          </div>
+
+          <div class="card contact-cta">
+            <h3 class="card-title">Start a conversation</h3>
+            <p class="card-text">
+              Tell us what you need — product category, quantities, timelines, and destination — and we’ll respond promptly.
+            </p>
+            <div class="contact-actions">
+              <a class="btn btn-primary" href="mailto:info@bluenautics.net?subject=BlueNautics%20Inquiry">Email us</a>
+              <a class="btn btn-secondary" href="#profiles">Download profiles</a>
+            </div>
+          </div>
+        </div>
+
+        <div class="fineprint">
+          <span class="pill">Single-page • Fast • Mobile-friendly</span>
+          <span class="pill">Premium/minimal corporate style</span>
+          <span class="pill">Optimized for GitHub Pages</span>
+        </div>
+      </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer" aria-label="Footer">
       <div class="container footer-inner">
-        <p>© <span id="year"></span> BlueNautics LLC</p>
-        <a class="back-top" href="#top">Back to top ↑</a>
+        <div class="footer-left">
+          <div class="footer-brand">
+            <img src="assets/img/logo.png" alt="BlueNautics logo" class="footer-logo" />
+            <div>
+              <div class="footer-name">BlueNautics LLC</div>
+              <div class="footer-tagline">Sourcing & Business Development • North America ↔ Bangladesh</div>
+            </div>
+          </div>
+        </div>
+
+        <div class="footer-right">
+          <a class="footer-link" href="#about">About</a>
+          <a class="footer-link" href="#verticals">Verticals</a>
+          <a class="footer-link" href="#process">Process</a>
+          <a class="footer-link" href="#clients">Clients</a>
+          <a class="footer-link" href="#profiles">Profiles</a>
+          <a class="footer-link" href="#contact">Contact</a>
+        </div>
+      </div>
+
+      <div class="container footer-bottom">
+        <span>© <span id="year"></span> BlueNautics LLC. All rights reserved.</span>
+        <a class="back-to-top" href="#top">Back to top ↑</a>
       </div>
     </footer>
   </main>
@@ -89,4 +445,3 @@
   <script src="main.js"></script>
 </body>
 </html>
-
