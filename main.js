@@ -1,74 +1,88 @@
+// ==========================================
+// BlueNautics LLC — main.js
+// Polished behavior: mobile nav, active links,
+// scroll progress bar, current year.
+// ==========================================
+
 (function () {
   const navToggle = document.getElementById("navToggle");
   const navMenu = document.getElementById("navMenu");
-  const yearEl = document.getElementById("year");
+  const navLinks = Array.from(document.querySelectorAll(".nav-link"));
+  const progressBar = document.querySelector(".scroll-progress");
 
-  // Footer year
-  if (yearEl) yearEl.textContent = String(new Date().getFullYear());
+  // Set year in footer
+  const yearEl = document.getElementById("year");
+  if (yearEl) yearEl.textContent = new Date().getFullYear();
 
   // Mobile menu toggle
-  function setMenuOpen(isOpen) {
-    navMenu.classList.toggle("is-open", isOpen);
-    navToggle.setAttribute("aria-expanded", isOpen ? "true" : "false");
-  }
-
   if (navToggle && navMenu) {
     navToggle.addEventListener("click", () => {
-      const open = navMenu.classList.contains("is-open");
-      setMenuOpen(!open);
+      const isOpen = navMenu.classList.toggle("open");
+      navToggle.setAttribute("aria-expanded", isOpen ? "true" : "false");
     });
 
-    // Close menu when a link is clicked (mobile)
-    navMenu.querySelectorAll("a.nav-link").forEach((a) => {
-      a.addEventListener("click", () => setMenuOpen(false));
+    // Close menu on link click (mobile)
+    navLinks.forEach((link) => {
+      link.addEventListener("click", () => {
+        if (navMenu.classList.contains("open")) {
+          navMenu.classList.remove("open");
+          navToggle.setAttribute("aria-expanded", "false");
+        }
+      });
     });
 
-    // Close menu when clicking outside (mobile)
+    // Close menu when clicking outside
     document.addEventListener("click", (e) => {
-      const target = e.target;
-      const clickedInside = navMenu.contains(target) || navToggle.contains(target);
-      if (!clickedInside) setMenuOpen(false);
-    });
-
-    // Close menu on Escape
-    document.addEventListener("keydown", (e) => {
-      if (e.key === "Escape") setMenuOpen(false);
+      const clickedInsideNav = e.target.closest(".nav");
+      if (!clickedInsideNav && navMenu.classList.contains("open")) {
+        navMenu.classList.remove("open");
+        navToggle.setAttribute("aria-expanded", "false");
+      }
     });
   }
 
-  // Better scroll offset for sticky header
-  // (prevents section titles being hidden under header)
-  function scrollWithOffset(id) {
-    const el = document.getElementById(id);
-    if (!el) return;
+  // Scroll progress bar
+  function updateProgress() {
+    if (!progressBar) return;
+    const scrollTop = window.scrollY || document.documentElement.scrollTop;
+    const docHeight = document.documentElement.scrollHeight - window.innerHeight;
+    const progress = docHeight > 0 ? (scrollTop / docHeight) * 100 : 0;
+    progressBar.style.width = `${Math.min(100, Math.max(0, progress))}%`;
+  }
+  window.addEventListener("scroll", updateProgress, { passive: true });
+  updateProgress();
 
-    const headerH = getComputedStyle(document.documentElement)
-      .getPropertyValue("--header-h")
-      .trim();
-    const headerPx = parseInt(headerH.replace("px", ""), 10) || 70;
+  // Active section highlighting (nav)
+  const sectionIds = navLinks
+    .map((a) => a.getAttribute("href"))
+    .filter((href) => href && href.startsWith("#"))
+    .map((href) => href.slice(1));
 
-    const y = el.getBoundingClientRect().top + window.pageYOffset - (headerPx + 10);
-    window.scrollTo({ top: y, behavior: "smooth" });
+  const sections = sectionIds
+    .map((id) => document.getElementById(id))
+    .filter(Boolean);
+
+  const headerOffset = 90;
+
+  function setActiveLink(activeId) {
+    navLinks.forEach((a) => {
+      const id = a.getAttribute("href")?.slice(1);
+      if (id === activeId) a.classList.add("active");
+      else a.classList.remove("active");
+    });
   }
 
-  // Intercept nav clicks to apply offset
-  document.querySelectorAll('a[href^="#"]').forEach((a) => {
-    a.addEventListener("click", (e) => {
-      const href = a.getAttribute("href");
-      if (!href || href === "#") return;
+  function onScrollActiveSection() {
+    const scrollPos = window.scrollY + headerOffset;
 
-      const id = href.slice(1);
-      if (!id) return;
+    // Find the last section above the scroll position
+    let current = sections[0]?.id || "";
+    for (const sec of sections) {
+      if (sec.offsetTop <= scrollPos) current = sec.id;
+    }
+    if (current) setActiveLink(current);
+  }
 
-      const el = document.getElementById(id);
-      if (!el) return;
-
-      e.preventDefault();
-      scrollWithOffset(id);
-
-      // Update URL hash without jump
-      history.pushState(null, "", "#" + id);
-    });
-  });
+  window.addEventListener("scroll", onScrollActiveSection, { passive: true });
+  onScrollActiveSection();
 })();
-
