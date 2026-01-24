@@ -190,7 +190,7 @@ code{
   line-height: 1.05;
 }
 
-/* NEW: subline under title */
+/* Subline under title */
 .hero-subline{
   display: inline-flex;
   align-items: center;
@@ -264,29 +264,41 @@ code{
   background: rgba(255,255,255,0.05);
 }
 
+/* ✅ NEW: make the right column card hug the logo */
+.hero-right{
+  display: flex;
+  justify-content: flex-end;     /* push card to the right edge */
+  align-items: center;
+}
+
 .hero-card{
   border-radius: var(--radius-lg);
   background: linear-gradient(180deg, rgba(255,255,255,0.08), rgba(255,255,255,0.05));
   border: 1px solid rgba(255,255,255,0.12);
   box-shadow: var(--shadow);
   overflow: hidden;
+
+  /* ✅ NEW: prevents the card from becoming too wide */
+  width: 100%;
+  max-width: 520px;
 }
 
 /* logo-only hero card top */
 .hero-card-top{
-  padding: 26px 22px 18px;
   display: flex;
   justify-content: center;
   background:
     radial-gradient(600px 280px at 50% 0%, rgba(76, 201, 240, 0.20), rgba(0,0,0,0));
 }
 
+/* ✅ NEW: reduced padding = less empty space around logo */
 .hero-card-top-only{
-  padding: 34px 22px 34px;
+  padding: 18px 18px;
 }
 
 .hero-logo{
-  width: min(300px, 78%);
+  /* ✅ NEW: logo fills more of the card width */
+  width: min(440px, 92%);
   height: auto;
   object-fit: contain;
   filter: drop-shadow(0 18px 40px rgba(0,0,0,0.55));
@@ -353,7 +365,6 @@ code{
   grid-template-columns: repeat(3, minmax(0, 1fr));
   gap: 14px;
 }
-
 .about-grid .card{ padding: 18px; }
 
 /* Verticals */
@@ -362,7 +373,6 @@ code{
   grid-template-columns: repeat(3, minmax(0, 1fr));
   gap: 14px;
 }
-
 .vertical{ padding: 18px; }
 
 .vertical-top{
@@ -509,7 +519,6 @@ code{
   grid-template-columns: repeat(2, minmax(0, 1fr));
   gap: 14px;
 }
-
 .contact-grid .card{ padding: 18px; }
 
 .contact-grid a{
@@ -613,7 +622,13 @@ code{
 /* Responsive */
 @media (max-width: 980px){
   .hero-inner{ grid-template-columns: 1fr; }
-  .hero-right{ order: -1; }
+  .hero-right{
+    order: -1;
+    justify-content: center;  /* center logo card on mobile */
+  }
+  .hero-card{
+    max-width: 560px;
+  }
 
   .about-grid{ grid-template-columns: 1fr; }
   .verticals-grid{ grid-template-columns: 1fr; }
