@@ -490,8 +490,14 @@ code{
   gap: 14px;
 }
 
+/* =========================
+   Business Profile alignment
+   ========================= */
 .profile-card{
   padding: 18px;
+  display: flex;
+  flex-direction: column;
+  height: 100%;
   transition: transform 180ms var(--ease), background 180ms var(--ease), border 180ms var(--ease);
 }
 
@@ -503,17 +509,24 @@ code{
 
 .profile-top{
   display: flex;
-  align-items: center;
+  align-items: flex-start;
   gap: 12px;
 }
 
+/* Keep subtitles consistent so the Download row aligns */
+.profile-card .card-text{
+  min-height: 44px;
+}
+
+/* Push Download row to the bottom */
 .profile-action{
-  margin-top: 16px;
+  margin-top: auto;
   display: flex;
   align-items: center;
   justify-content: space-between;
   color: rgba(255,255,255,0.86);
   font-weight: 700;
+  padding-top: 16px;
 }
 
 /* =========================
@@ -532,7 +545,7 @@ code{
   padding: 18px;
 }
 
-/* A nice header row for Name + LinkedIn icon */
+/* Header row: Name + LinkedIn icon */
 .contact-head{
   display: flex;
   align-items: center;
@@ -582,11 +595,6 @@ code{
   height: 18px;
   display: block;
   color: rgba(255,255,255,0.86);
-}
-
-/* Optional: “highlight” card style if you want to mark one as primary later */
-.contact-cta{
-  background: linear-gradient(180deg, rgba(76,201,240,0.12), rgba(255,255,255,0.05));
 }
 
 /* Footer */
