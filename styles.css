@@ -360,7 +360,7 @@ code{
   color: rgba(255,255,255,0.74);
 }
 
-/* About grid (default) */
+/* About grid */
 .about-grid{
   display: grid;
   grid-template-columns: repeat(3, minmax(0, 1fr));
@@ -369,7 +369,6 @@ code{
 
 .about-grid .card{ padding: 18px; }
 
-/* About grid 4 */
 .about-grid-4{
   grid-template-columns: repeat(4, minmax(0, 1fr));
 }
@@ -381,7 +380,13 @@ code{
   gap: 14px;
 }
 
-.vertical{ padding: 18px; }
+/* ✅ IMPORTANT FIX: equal height + aligned pills */
+.vertical{
+  padding: 18px;
+  display: flex;
+  flex-direction: column;
+  height: 100%;
+}
 
 .vertical-top{
   display: flex;
@@ -389,7 +394,7 @@ code{
   gap: 12px;
 }
 
-/* Icon badge (supports SVG icons) */
+/* Icon badge */
 .icon-badge{
   width: 44px;
   height: 44px;
@@ -415,6 +420,12 @@ code{
   display: flex;
   gap: 10px;
   flex-wrap: wrap;
+}
+
+/* Push pills to bottom of each vertical card */
+.vertical .card-meta{
+  margin-top: auto;
+  padding-top: 14px;
 }
 
 .pill{
