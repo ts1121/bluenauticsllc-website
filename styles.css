@@ -380,7 +380,7 @@ code{
   gap: 14px;
 }
 
-/* ✅ IMPORTANT FIX: equal height + aligned pills */
+/* Equal height + aligned pills */
 .vertical{
   padding: 18px;
   display: flex;
@@ -422,7 +422,6 @@ code{
   flex-wrap: wrap;
 }
 
-/* Push pills to bottom of each vertical card */
 .vertical .card-meta{
   margin-top: auto;
   padding-top: 14px;
@@ -484,30 +483,6 @@ code{
   border-top: 1px solid rgba(255,255,255,0.08);
 }
 
-/* Clients */
-.clients-grid{
-  padding: 16px;
-  display: grid;
-  grid-template-columns: repeat(6, minmax(0, 1fr));
-  gap: 12px;
-}
-
-.client-tile{
-  border-radius: 14px;
-  border: 1px dashed rgba(255,255,255,0.16);
-  background: rgba(255,255,255,0.04);
-  min-height: 70px;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-}
-
-.client-placeholder{
-  color: rgba(255,255,255,0.60);
-  font-weight: 700;
-  font-size: 0.90rem;
-}
-
 /* Profiles */
 .profiles-grid{
   display: grid;
@@ -541,37 +516,77 @@ code{
   font-weight: 700;
 }
 
-/* Contact */
+/* =========================
+   CONTACT (UPDATED: 4 cards)
+   ========================= */
+
+/* 2x2 grid on desktop, 1 column on mobile */
 .contact-grid{
   display: grid;
   grid-template-columns: repeat(2, minmax(0, 1fr));
   gap: 14px;
 }
 
-.contact-grid .card{ padding: 18px; }
+/* Contact cards */
+.contact-grid .card{
+  padding: 18px;
+}
 
+/* A nice header row for Name + LinkedIn icon */
+.contact-head{
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 12px;
+}
+
+.contact-role{
+  color: rgba(255,255,255,0.70);
+  font-weight: 600;
+  margin-top: 6px;
+}
+
+/* Email/link styling */
 .contact-grid a{
   text-decoration: underline;
   text-decoration-color: rgba(255,255,255,0.22);
   text-underline-offset: 4px;
 }
 
+.contact-grid a:hover{
+  text-decoration-color: rgba(76,201,240,0.55);
+}
+
+/* LinkedIn icon link */
+.social-link{
+  width: 38px;
+  height: 38px;
+  border-radius: 12px;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  background: rgba(255,255,255,0.06);
+  border: 1px solid rgba(255,255,255,0.12);
+  transition: transform 160ms var(--ease), background 160ms var(--ease), border 160ms var(--ease);
+  flex: 0 0 auto;
+}
+
+.social-link:hover{
+  transform: translateY(-1px);
+  background: rgba(255,255,255,0.08);
+  border: 1px solid rgba(255,255,255,0.16);
+}
+
+.social-icon{
+  width: 18px;
+  height: 18px;
+  display: block;
+  color: rgba(255,255,255,0.86);
+}
+
+/* Optional: “highlight” card style if you want to mark one as primary later */
 .contact-cta{
   background: linear-gradient(180deg, rgba(76,201,240,0.12), rgba(255,255,255,0.05));
-}
-
-.contact-actions{
-  display: flex;
-  gap: 12px;
-  flex-wrap: wrap;
-  margin-top: 14px;
-}
-
-.fineprint{
-  margin-top: 18px;
-  display: flex;
-  gap: 10px;
-  flex-wrap: wrap;
 }
 
 /* Footer */
@@ -671,8 +686,9 @@ code{
   }
 
   .verticals-grid{ grid-template-columns: 1fr; }
-  .clients-grid{ grid-template-columns: repeat(3, minmax(0, 1fr)); }
   .profiles-grid{ grid-template-columns: 1fr; }
+
+  /* Contact: stack to 1 column on smaller screens */
   .contact-grid{ grid-template-columns: 1fr; }
 
   .footer-inner{
