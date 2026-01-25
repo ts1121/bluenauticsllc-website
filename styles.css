@@ -369,7 +369,7 @@ code{
 
 .about-grid .card{ padding: 18px; }
 
-/* ✅ NEW: About grid when you want 4 cards */
+/* About grid 4 */
 .about-grid-4{
   grid-template-columns: repeat(4, minmax(0, 1fr));
 }
@@ -389,16 +389,25 @@ code{
   gap: 12px;
 }
 
+/* Icon badge (supports SVG icons) */
 .icon-badge{
-  width: 40px;
-  height: 40px;
+  width: 44px;
+  height: 44px;
   border-radius: 14px;
   display: inline-flex;
   align-items: center;
   justify-content: center;
-  font-weight: 800;
   background: linear-gradient(135deg, rgba(76, 201, 240, 0.22), rgba(67, 97, 238, 0.18));
   border: 1px solid rgba(255,255,255,0.14);
+  color: rgba(255,255,255,0.92);
+  flex: 0 0 auto;
+}
+
+.badge-icon{
+  width: 24px;
+  height: 24px;
+  display: block;
+  color: rgba(255,255,255,0.92);
 }
 
 .card-meta{
@@ -642,7 +651,6 @@ code{
     max-width: 560px;
   }
 
-  /* About becomes 1 column on mobile */
   .about-grid{
     grid-template-columns: 1fr;
   }
